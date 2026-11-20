@@ -5,14 +5,14 @@ import os
 import re
 from sklearn.metrics.pairwise import cosine_similarity  
 
-app = FaceAnalysis(name="buffalo_l", providers=["CPUEcecutionProvider"])
+app = FaceAnalysis(name="buffalo_l", providers=["CPUExecutionProvider"])
 app.prepare(ctx_id=-1)
-
 
 def verify_face(image):
     if image is None:
         return False, "No image provided"
     faces = app.get(image)
+    
     if len(faces) != 1:
         return False, "Please capture an image with exactly one face!"
     embedding = faces[0].embedding
@@ -32,4 +32,4 @@ def verify_face(image):
         max_similarity = max(similarity_score)
         if max_similarity >= 0.5:
             return True, f"Identity verified! Matched with {file.split('.')[0]}."
-        return False, "Identity not recognized."
+    return False, "Identity not recognized."
