@@ -1,11 +1,6 @@
 .venv/
 __pycache__/
-*.pyc
-.env
-.env.*
 data/
-models/
 photos/
+.env
 node_modules/
-dist/
-.DS_Store

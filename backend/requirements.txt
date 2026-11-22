@@ -1,10 +1,10 @@
-supabase
 fastapi
 uvicorn
 python-multipart
 numpy
-opencv-python-headless
-insightface
 onnxruntime
-psycopg[binary]
-python-dotenv
+opencv-python-headless
+onnx
+scikit-image
+tqdm
+requests

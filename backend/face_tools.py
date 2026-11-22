@@ -3,7 +3,7 @@ import numpy as np
 from insightface.app import FaceAnalysis
 
 # Load the face model ONE time, when the server starts.
-model = FaceAnalysis(name="buffalo_l", providers=["CPUExecutionProvider"])
+model = FaceAnalysis(name="buffalo_l", allowed_modules=["detection", "recognition"], providers=["CPUExecutionProvider"])
 model.prepare(ctx_id=-1, det_size=(640, 640))
 
 
