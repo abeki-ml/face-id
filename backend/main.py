@@ -2,6 +2,7 @@ import os
 import io
 import psycopg
 import uuid
+from fastapi.staticfiles import StaticFiles
 from supabase import create_client
 import numpy as np
 from dotenv import load_dotenv
@@ -159,3 +160,5 @@ def storage_check():
         return {"message": "Storage upload and download successful"}
 
     return {"message": "Storage test failed"}
+
+app.mount("/", StaticFiles(directory="../frontend/dist", html=True), name="site")

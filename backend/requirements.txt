@@ -8,3 +8,6 @@ onnx
 scikit-image
 tqdm
 requests
+psycopg[binary]
+supabase
+python-dotenv
